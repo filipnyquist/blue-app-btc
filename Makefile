@@ -86,9 +86,13 @@ else ifeq ($(COIN),vertcoin)
 # Vertcoin
 DEFINES   += BTCHIP_P2PKH_VERSION=71 BTCHIP_P2SH_VERSION=5 BTCHIP_COIN_FAMILY=1 BTCHIP_COINID=\"Vertcoin\" COINID_UPCASE=\"VERTCOIN\" COLOR_HDR=0x1B5C2E COLOR_DB=0x8DAE97 COINID_NAME=\"Vertcoin\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"VTC\" COIN_VERTCOIN HAVE_SEGWIT_CHANGE_SUPPORT
 APPNAME ="Vertcoin"
+else ifeq ($(COIN),lbry)
+# Lbry
+DEFINES += BTCHIP_P2PKH_VERSION=63 BTCHIP_P2SH_VERSION=5 BTCHIP_COIN_FAMILY=1 BTCHIP_COINID=\"Lbry\" COINID_UPCASE=\"LBRY\" COLOR_HDR=0xFCB653 COLOR_DB=0xFEDBA9 COINID_NAME=\"Lbry\" COINID=$(COIN) BTCHIP_COINID_SHORT=\"LBC\" COIN_SYSCOIN
+APPNAME ="Lbry"
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw, pivx, viacoin, vertcoin) 
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw, pivx, viacoin, vertcoin, lbry) 
 endif
 endif
 
